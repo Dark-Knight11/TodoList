@@ -1,45 +1,30 @@
-let express = require("express");
-let app = express();
-let port = process.env.PORT || 3000;
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
+
+let items = ['add task'];
 
 app.get("/", (req, res) => {
-    var today = new Date();
-    var day = today.getDay();
-    msg = "";
-    switch (day) {
-        case 0:
-            msg = "Yay it's Sunday";
-            break;
-        case 1:
-            msg = "It's Monday we'll have to work 🙁"
-            break;
-        case 2:
-            msg = "It's Tuesday we'll have to work 🙁"
-            break;
-        case 3:
-            msg = "It's Wedensday we'll have to work 🙁"
-            break;
-        case 4:
-            msg = "It's Thursday we'll have to work 🙁"
-            break;
-        case 5:
-            msg = "It's Friday we'll have to work 🙁"
-            break;
-        case 6:
-            msg = "Yay it's Saturday weekend is here 🤗";
-            break;
-        default:
-            msg = "No day, its end of the earth you dumb bitch";
-            break;
+    let today = new Date();
+    let options = {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric"
     }
-    res.render('list', { day: msg });
+    let msg = today.toLocaleDateString("en-IN", options);
+    res.render('list', { day: msg, task: items });
 });
 
-// app.post("/", (req, res) => {
-
-// });
+app.post("/", (req, res) => {
+    let work = req.body.task;
+    items.push(work);
+    console.log(work);
+    res.redirect("/");
+});
 
 app.listen(port, () => {
     console.log("Server started on port " + port);
