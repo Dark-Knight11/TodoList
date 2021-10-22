@@ -1,4 +1,5 @@
 const express = require("express");
+const date = require(__dirname + "/date.js");
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
@@ -6,24 +7,34 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 let items = ['add task'];
+let workItems = []
 
 app.get("/", (req, res) => {
-    let today = new Date();
-    let options = {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        year: "numeric"
-    }
-    let msg = today.toLocaleDateString("en-IN", options);
-    res.render('list', { day: msg, task: items });
+    let msg = date();
+    res.render('list', { listTitle: msg, task: items });
 });
 
 app.post("/", (req, res) => {
+    let title = req.body.button;
     let work = req.body.task;
-    items.push(work);
-    console.log(work);
-    res.redirect("/");
+    if (title === "Work") {
+        workItems.push(work);
+        console.log(work);
+        res.redirect("/work");
+    }
+    else {
+        items.push(work);
+        console.log(work);
+        res.redirect("/");
+    }
+});
+
+app.get("/work", (req, res) => {
+    res.render("list", { listTitle: "Work List", task: workItems })
+});
+
+app.get("/about", (req, res) => {
+    res.render('about');
 });
 
 app.listen(port, () => {

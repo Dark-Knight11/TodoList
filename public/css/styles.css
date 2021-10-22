@@ -3,6 +3,7 @@ html {
     background-image: -webkit-linear-gradient(53deg, #05cc47 50%, #181a1b 50%);
     min-height: 1000px;
     font-family: 'helvetica neue';
+    text-align: center;
   }
   
   h1 {
@@ -88,8 +89,14 @@ html {
   }
   
   footer {
-    color: white;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(256, 256, 256, 0.5);
     text-align: center;
   }
+
+  .about-head {
+    color: white;
+  }
   
+  .about-content {
+    color: white;
+  }
