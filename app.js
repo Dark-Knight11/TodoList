@@ -1,7 +1,7 @@
 const express = require("express");
 const date = require(__dirname + "/date.js");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
@@ -38,5 +38,5 @@ app.get("/about", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Server started on port " + port);
+    console.log("Server started executing on port " + port);
 });
