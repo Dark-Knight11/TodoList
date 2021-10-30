@@ -1,13 +1,13 @@
 html {
-    background-color: #E4E9FD;
+    background-color: #647cde;
     background-image: -webkit-linear-gradient(53deg, #05cc47 50%, #181a1b 50%);
     min-height: 1000px;
-    font-family: 'helvetica neue';
+    font-family: 'Palatino';
     text-align: center;
   }
   
   h1 {
-    color: black;
+    color:#a6b1de;
     padding: 10px;
   }
   
@@ -20,7 +20,7 @@ html {
   }
   
   #heading {
-    background-color: #4dc47d; /* #A683E3 */
+    background-color: #647cde; 
     text-align: center;
   }
   
@@ -46,9 +46,9 @@ html {
   
   p {
     margin: 0;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 200;
+    padding: 40px;
+    font-size: 25px;
+    font-weight: 400;
   }
   
   form {
@@ -89,7 +89,7 @@ html {
   }
   
   footer {
-    color: rgba(256, 256, 256, 0.5);
+    color: #647cde;
     text-align: center;
   }
 
