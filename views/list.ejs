@@ -1,15 +1,15 @@
 <%- include('header'); -%>
 
     <body>
-        <div class="box" id="heading">
+        <div class="box" id="Header">
             <h1>
-                <%= listTitle %>
+                <%= listHeading %>
             </h1>
         </div>
         <div class="box">
 
             <% for (var i=0; i < task.length; i++) { %>
-                <div class="checkbox item">
+                <div class="checkbox content">
                     <input type="checkbox">
                     <p>
                         <%= task[i] %>
@@ -19,7 +19,7 @@
 
                     <form class="item" action="/" method="POST">
                         <input name="task" type="text" placeholder="New Item" autofocus autocomplete="off" required>
-                        <button type="submit" name="button" value=<%=listTitle %> >+</button>
+                        <button type="submit" name="button" value=<%=listHeading %> >+</button>
                     </form>
 
         </div>
