@@ -1,18 +1,18 @@
 html {
     background-color: #E4E9FD;
-    background-image: -webkit-linear-gradient(53deg, #05cc47 50%, #181a1b 50%);
+    background-image: -webkit-linear-gradient(53deg, #87CEEB 50%, #181a1b 50%);
     min-height: 1000px;
-    font-family: 'helvetica neue';
+    font-family: 'ui-sans-serif';
     text-align: center;
   }
   
   h1 {
-    color: black;
+    color: #FF7F50;
     padding: 10px;
   }
   
   .box {
-    max-width: 400px;
+    max-width: 450px;
     margin: 50px auto;
     background: white;
     border-radius: 5px;
@@ -20,7 +20,7 @@ html {
   }
   
   #heading {
-    background-color: #4dc47d; /* #A683E3 */
+    background-color: #4dc47d; 
     text-align: center;
   }
   
@@ -37,7 +37,7 @@ html {
   
   input:checked+p {
     text-decoration: line-through;
-    text-decoration-color: #4dc47d;
+    text-decoration-color: #87CEEB;
   }
   
   input[type="checkbox"] {
@@ -47,7 +47,7 @@ html {
   p {
     margin: 0;
     padding: 20px;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 200;
   }
   
@@ -69,8 +69,8 @@ html {
   
   input[type="text"] {
     text-align: center;
-    height: 60px;
-    top: 10px;
+    height: 75px;
+    top: 15px;
     border: none;
     background: transparent;
     font-size: 20px;
